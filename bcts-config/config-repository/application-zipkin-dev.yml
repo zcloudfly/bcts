@@ -28,3 +28,7 @@ management:
     web:
       server:
         auto-time-requests: false
+
+  spring:
+    main:
+      allow-bean-definition-overriding: true
