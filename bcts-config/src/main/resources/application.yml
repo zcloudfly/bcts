@@ -10,10 +10,10 @@ spring:
       label: master
       server:
         git:
-          uri: https://github.com/zcloudfly/bcts.git
-          search-paths: bcts-config/config-repository
-          username: 920869693@qq.com
-          password: zhangyunfei222
+          uri: https://github.com/zcloudfly/bcts.git #仓库地址
+          search-paths: bcts-config/config-repository  #地址里的目录
+          username:  920869693@qq.com           #登录名
+          password:  zhangyunfei222           #登录密码
 #  zipkin:
 #    base-url: http://localhost:9411
 
