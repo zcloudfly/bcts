@@ -1,6 +1,6 @@
 spring:
   application:
-    name: bcts-service-admin
+    name: bcts-service-sso
   boot:
     admin:
       client:
@@ -24,7 +24,9 @@ mybatis:
 server:
   port: 8503
 
-
+feigen:
+  hystrix:
+    enabled: true
 
 eureka:
   client:
