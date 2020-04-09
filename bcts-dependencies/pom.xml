@@ -24,16 +24,43 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Spring Settings -->
-<!--        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>  boot 2.2.*-->
+        <!-- <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>  boot 2.2.*-->
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
-<!--        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version> 对应boot2.1.*-->
+        <!--  <spring-cloud.version>Finchley.RELEASE</spring-cloud.version> 对应boot2.1.*-->
         <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
         <zipkin.version>2.10.1</zipkin.version>
         <eureka.version>2.2.1.RELEASE</eureka.version>
+        <springboot-alibaba-druid.version>1.1.10</springboot-alibaba-druid.version>
+        <tk.mybatis>2.0.2</tk.mybatis>
+        <springboot-pagehelper.version>1.2.5</springboot-pagehelper.version>
+        <!--env settings-->
+        <mysql.version>8.0.18</mysql.version>
+        <lombok.version>1.18.12</lombok.version>
+        <guava.version>28.2-jre</guava.version>
+        <nekohtml.version>1.9.22</nekohtml.version>
+        <jackson.version>2.9.6</jackson.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!--springboot starter begin-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${springboot-alibaba-druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${tk.mybatis}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${springboot-pagehelper.version}</version>
+            </dependency>
+            <!--springboot starter end-->
+            <!--springcloud begin-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -41,6 +68,38 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--springcloud end-->
+            <!--env  begin-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- 解决 thymeleaf 模板引擎一定要执行严格的 html5 格式校验问题 -->
+            <dependency>
+                <groupId>net.sourceforge.nekohtml</groupId>
+                <artifactId>nekohtml</artifactId>
+                <version>${nekohtml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <!--env end-->
+
         </dependencies>
     </dependencyManagement>
 

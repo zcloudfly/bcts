@@ -1,0 +1,18 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span th:text="${message}"></span>
+<span th:text="${user.loginCode}"></span>
+ <form action="/login" method="post">
+     <label>邮箱：</label><input name="loginCode" type="text">
+     <label>密码：</label><input name="password" type="text">
+     <input type="submit" value="登录">
+
+ </form>
+</body>
+</html>

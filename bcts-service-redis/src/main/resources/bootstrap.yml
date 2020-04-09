@@ -2,31 +2,38 @@
 #  cloud:
 #    config:
 #      uri: http://localhost:8888
-#      name: application-eureka
+#      name: application-service-redis
 #      label: master
 #      profile: dev
 
+
 spring:
   application:
-    name: bcts-eureka
+    name: bcts-service-redis
 #  boot:
 #    admin:
 #      client:
 #        url: http://localhost:8084
 #  zipkin:
 #    base-url: http://localhost:9411
+  redis:
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+    sentinel:
+      master: mymaster
+      nodes: 192.168.152.102:26379, 192.168.152.102:26380, 192.168.152.102:26381
 
 server:
-  port: 8761
+  port: 8502
 
 eureka:
-  instance:
-    hostname: localhost
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 management:
   endpoint:
