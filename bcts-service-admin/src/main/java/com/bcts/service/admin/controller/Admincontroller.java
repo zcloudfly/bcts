@@ -4,6 +4,9 @@ import com.bcts.common.dto.BaseResult;
 import com.bcts.common.domain.BctsSysUser ;
 import com.bcts.service.admin.service.AdminService;
 import com.google.common.collect.Lists;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +27,12 @@ public class Admincontroller {
      * @param password
      * @return
      */
+    @ApiOperation(value = "登录接口")
+    @ApiImplicitParams(value = {
+            @ApiImplicitParam(name = "loginCode", value = "登录账号", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String"),
+            // @ApiImplicitParam(name = "tbSysUserJson", value = "管理员对象 JSON 字符串", required = false, dataTypeClass = String.class, paramType = "json")
+    })
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public BaseResult login(String loginCode,String password) {
         BaseResult baseResult = checkLogin(loginCode, password);
@@ -49,5 +58,7 @@ public class Admincontroller {
          }
          return baseResult;
      }
+
+
 
 }

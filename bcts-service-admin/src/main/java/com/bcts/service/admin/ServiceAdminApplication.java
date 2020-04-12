@@ -3,6 +3,7 @@ package com.bcts.service.admin;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
@@ -10,7 +11,8 @@ import tk.mybatis.spring.annotation.MapperScan;
  * Author: 张云飞
  * Time  :20200405
  */
-@SpringBootApplication
+@EnableSwagger2
+@SpringBootApplication(scanBasePackages = "com.bcts")
 @EnableEurekaClient
 @MapperScan("com.bcts.service.admin.mapper")
 public class ServiceAdminApplication {
