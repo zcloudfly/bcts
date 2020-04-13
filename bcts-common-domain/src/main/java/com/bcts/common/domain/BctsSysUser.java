@@ -1,11 +1,18 @@
 package com.bcts.common.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ *
+ */
 @Table(name = "bcts_sys_user")
-public class BctsSysUser {
+public class BctsSysUser implements Serializable {
+
+    private static final long serialVersionUID = 8289770415244673535L;
+
     /**
      * 用户编码
      */

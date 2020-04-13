@@ -39,6 +39,7 @@
         <guava.version>28.2-jre</guava.version>
         <nekohtml.version>1.9.22</nekohtml.version>
         <jackson.version>2.9.6</jackson.version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencyManagement>
@@ -99,7 +100,18 @@
                 <version>${jackson.version}</version>
             </dependency>
             <!--env end-->
-
+            <!-- Swagger2 Begin -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!-- Swagger2 End -->
         </dependencies>
     </dependencyManagement>
 
