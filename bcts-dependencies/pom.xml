@@ -34,7 +34,7 @@
         <tk.mybatis>2.0.2</tk.mybatis>
         <springboot-pagehelper.version>1.2.5</springboot-pagehelper.version>
         <!--env settings-->
-        <mysql.version>8.0.18</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <lombok.version>1.18.12</lombok.version>
         <guava.version>28.2-jre</guava.version>
         <nekohtml.version>1.9.22</nekohtml.version>
